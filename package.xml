@@ -19,6 +19,7 @@
 
   
   <buildtool_depend>catkin</buildtool_depend>
+  <depend>dynamic_reconfigure</depend>
   <depend>std_msgs</depend>
   <depend>std_srvs</depend>
 
