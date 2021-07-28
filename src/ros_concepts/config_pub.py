@@ -13,6 +13,9 @@ class ConfigurableFloatPub:
     Has a service to enable/disable publishing
     """
     def __init__(self, topic_name="float"):
+        """
+        Initializes class that will publish a random float to topic_name
+        """
         self.data_lock_ = Lock()
         self.min_ = rospy.get_param("~min", 0)
         self.max_ = rospy.get_param("~max", 500)
@@ -24,6 +27,9 @@ class ConfigurableFloatPub:
        
 
     def dyn_reconfig_cb(self, config, level):
+        """
+        Dynamic reconfigure callback
+        """
         with self.data_lock_:
             self.min_ = config.min
             self.max_ = config.max
@@ -32,6 +38,10 @@ class ConfigurableFloatPub:
         return config
 
     def enable_cb(self, req):
+        """
+        publish enable/disable service callback
+        req- SetBoolRequest true enables, false disables
+        """
         with self.data_lock_:
             self.enabled_ = req.data
             resp = SetBoolResponse()

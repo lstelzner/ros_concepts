@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import rospy
 from ros_concepts.config_pub import ConfigurableFloatPub
 
