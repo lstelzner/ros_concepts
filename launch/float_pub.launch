@@ -1,0 +1,10 @@
+<launch>
+    <arg name="frequency" default="2" />
+    <arg name="min" default="-2" />
+    <arg name="max" default="2" />
+    <node name="simple_node" pkg="ros_concepts" type="simple_node.py">
+        <param name="frequency" value="$(arg frequency)"/>
+        <param name="min" value="$(arg min)"/>
+        <param name="max" value="$(arg max)"/>
+    </node>
+</launch>

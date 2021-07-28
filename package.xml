@@ -22,6 +22,7 @@
   <depend>dynamic_reconfigure</depend>
   <depend>std_msgs</depend>
   <depend>std_srvs</depend>
+   <build_depend>rostest</build_depend>
 
 
 
